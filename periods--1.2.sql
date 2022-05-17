@@ -3444,6 +3444,7 @@ BEGIN
             ) AS objects
             ORDER BY object_name, object_type, privilege_type
         LOOP
+	/*
             IF
                 r.history_or_portion = 'h' AND
                 (r.object_type, r.privilege_type) NOT IN (('r', 'SELECT'), ('v', 'SELECT'), ('f', 'EXECUTE'))
@@ -3456,6 +3457,7 @@ BEGIN
                 RAISE EXCEPTION 'cannot grant % directly to "%"; grant % to "%" instead',
                     r.privilege_type, r.object_name, r.base_privilege_type, r.table_name;
             END IF;
+	  */
         END LOOP;
 
         /* Propagate GRANTs */
