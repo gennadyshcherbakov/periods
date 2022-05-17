@@ -3567,8 +3567,8 @@ BEGIN
 
             ORDER BY table_name, object_name
         LOOP
-            RAISE EXCEPTION 'cannot revoke % directly from "%", revoke % from "%" instead',
-                r.privilege_type, r.object_name, r.base_privilege_type, r.table_name;
+          --  RAISE EXCEPTION 'cannot revoke % directly from "%", revoke % from "%" instead',
+          --      r.privilege_type, r.object_name, r.base_privilege_type, r.table_name;
         END LOOP;
 
         /* Propagate REVOKEs */
